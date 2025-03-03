@@ -12,7 +12,8 @@ class SongCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
+    return Container(
+      width: 100,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
