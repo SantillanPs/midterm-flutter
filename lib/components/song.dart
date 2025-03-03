@@ -12,34 +12,36 @@ class SongCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Container(
-          width: 100,
-          height: 100,
-          decoration: BoxDecoration(
-              image: DecorationImage(
-                  image: AssetImage(coverPhoto), fit: BoxFit.cover),
-              borderRadius: BorderRadius.circular(10)),
-        ),
-        SizedBox(
-          height: 5,
-        ),
-        Text(
-          songTitle,
-          style: TextStyle(
-              color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-        ),
-        Text(
-          artist,
-          style: TextStyle(color: Colors.grey, fontSize: 8),
-          overflow: TextOverflow.ellipsis,
-          maxLines: 1,
-        )
-      ],
+    return Expanded(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Container(
+            width: 100,
+            height: 100,
+            decoration: BoxDecoration(
+                image: DecorationImage(
+                    image: AssetImage(coverPhoto), fit: BoxFit.cover),
+                borderRadius: BorderRadius.circular(10)),
+          ),
+          SizedBox(
+            height: 5,
+          ),
+          Text(
+            songTitle,
+            style: TextStyle(
+                color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          ),
+          Text(
+            artist,
+            style: TextStyle(color: Colors.grey, fontSize: 8),
+            overflow: TextOverflow.ellipsis,
+            maxLines: 1,
+          )
+        ],
+      ),
     );
   }
 }
