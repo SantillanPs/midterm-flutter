@@ -12,14 +12,14 @@ class SongCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 100,
+    return SizedBox(
+      width: 80,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
-            width: 100,
-            height: 100,
+            width: 80,
+            height: 80,
             decoration: BoxDecoration(
                 image: DecorationImage(
                     image: AssetImage(coverPhoto), fit: BoxFit.cover),

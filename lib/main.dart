@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:midterm/components/topSongs.dart';
 import 'components/songGallery.dart';
 import 'components/searchBar.dart';
 
@@ -19,14 +20,6 @@ class MyApp extends StatelessWidget {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             centerTitle: true,
-            leading: IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.menu,
-                color: const Color.fromARGB(255, 243, 109, 201),
-                size: 28,
-              ),
-            ),
             title: Text(
               "JukeVibe",
               style: TextStyle(
@@ -49,27 +42,28 @@ class MyApp extends StatelessWidget {
                   Padding(
                       padding: const EdgeInsets.only(top: 105, bottom: 15),
                       child: SearchWidget()),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Music Library",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: SongGallery(),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.only(bottom: 15),
-                    child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text(
-                        "Music Library",
-                        style: TextStyle(color: Colors.white, fontSize: 18),
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Column(
+                        children: [
+                          TopSongs(),
+                          SizedBox(height: 15),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 15),
+                            child: Align(
+                              alignment: Alignment.centerLeft,
+                              child: Text(
+                                "Music Library",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 18),
+                              ),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(bottom: 15),
+                            child: SongGallery(),
+                          ),
+                        ],
                       ),
                     ),
                   ),
@@ -80,7 +74,7 @@ class MyApp extends StatelessWidget {
           bottomNavigationBar: Container(
             decoration: BoxDecoration(
                 gradient: LinearGradient(colors: [
-              const Color.fromARGB(255, 37, 38, 66),
+              const Color.fromARGB(255, 53, 37, 66),
               const Color.fromARGB(255, 28, 33, 53),
             ], begin: Alignment.topLeft, end: Alignment.bottomCenter)),
             child: BottomNavigationBar(
@@ -93,8 +87,7 @@ class MyApp extends StatelessWidget {
                 BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
                 BottomNavigationBarItem(
                     icon: Icon(Icons.search), label: "Search"),
-                BottomNavigationBarItem(
-                    icon: Icon(Icons.person), label: "Profile"),
+                BottomNavigationBarItem(icon: Icon(Icons.menu), label: "Menu"),
               ],
             ),
           )),
