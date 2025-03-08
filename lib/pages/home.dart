@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:midterm/components/topSongsSlider.dart';
-import '../../components/songGallery.dart';
-import '../../components/searchBar.dart';
-import '../../components/bottomNav.dart';
+import 'package:midterm/components/topSongSlider.dart';
+import '../components/songGallery.dart';
+import '../components/searchBar.dart';
+import '../components/bottomNav.dart';
 import 'explore.dart';
 import 'menu.dart';
 
@@ -40,7 +40,19 @@ class _HomeState extends State<Home> {
           title: Text(
             "JukeVibe",
             style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 27),
+                color: const Color.fromARGB(255, 255, 137, 218),
+                fontWeight: FontWeight.bold,
+                fontSize: 27,
+                shadows: [
+                  Shadow(
+                    color: Color.fromARGB(255, 243, 109, 201).withAlpha(178),
+                    blurRadius: 15,
+                  ),
+                  Shadow(
+                    color: Color.fromARGB(255, 243, 109, 201).withAlpha(128),
+                    blurRadius: 25,
+                  ),
+                ]),
           ),
         ),
         body: Container(
@@ -64,7 +76,7 @@ class _HomeState extends State<Home> {
                 child: Column(
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(top: 105, bottom: 15),
+                      padding: const EdgeInsets.only(top: 105, bottom: 20),
                       child: SearchWidget(),
                     ),
                     Expanded(
@@ -72,20 +84,22 @@ class _HomeState extends State<Home> {
                         child: Column(
                           children: [
                             TopSongs(),
-                            SizedBox(height: 15),
-                            Padding(
-                              padding: const EdgeInsets.only(bottom: 15),
-                              child: Align(
-                                alignment: Alignment.centerLeft,
-                                child: Text(
+                            SizedBox(height: 20),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Text(
                                   "Recently Played",
                                   style: TextStyle(
                                       color: Colors.white,
                                       fontSize: 20,
                                       fontWeight: FontWeight.bold),
                                 ),
-                              ),
+                                Icon(Icons.arrow_forward_ios,
+                                    color: Colors.white, size: 20),
+                              ],
                             ),
+                            SizedBox(height: 10),
                             SongGallery(),
                           ],
                         ),

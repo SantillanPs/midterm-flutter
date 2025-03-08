@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'song.dart';
+import 'songCard.dart';
 
 class TopSongs extends StatelessWidget {
   const TopSongs({super.key});
@@ -10,13 +10,20 @@ class TopSongs extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Text(
-              "Top Songs",
-              style: TextStyle(color: Colors.white, fontSize: 18),
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                "Top Songs",
+                style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold),
+              ),
+              Icon(Icons.arrow_forward_ios, color: Colors.white, size: 20),
+            ],
           ),
+          SizedBox(height: 10),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(

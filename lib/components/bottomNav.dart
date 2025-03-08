@@ -13,11 +13,7 @@ class BottomNav extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
-          gradient: LinearGradient(colors: [
-        const Color.fromARGB(255, 53, 37, 66),
-        const Color.fromARGB(255, 28, 33, 53),
-      ], begin: Alignment.topLeft, end: Alignment.bottomCenter)),
+      decoration: BoxDecoration(color: const Color.fromARGB(255, 39, 28, 49)),
       child: BottomNavigationBar(
         currentIndex: selectedIndex,
         onTap: onItemTapped,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './song.dart';
+import 'songCard.dart';
 
 class SongGallery extends StatelessWidget {
   const SongGallery({super.key});
